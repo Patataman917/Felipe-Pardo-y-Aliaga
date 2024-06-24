@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creaciones Literarias - Felipe Pardo y Aliaga</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        /* Estilos específicos */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section {
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .highlight {
+            background-color: #f39c12;
+            padding: 0.5rem;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Creaciones Literarias</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="contexto.html">Contexto histórico</a>
+        <a href="criticas.html">Críticas y recepción</a>
+        <a href="influencias.html">Influencias literarias</a>
+        <a href="minijuego.html">Minijuego</a>
+        <a href="citas.html">Citas destacadas</a>
+    </nav>
+    <div class="container">
+        <section class="section">
+            <h2>Obras Destacadas</h2>
+            <p>Felipe Pardo y Aliaga fue un prolífico escritor cuya obra abarcó diferentes géneros literarios. Algunas de sus obras más destacadas incluyen:</p>
+            <ul>
+                <li>"La Limeña o El Perú por dentro": Una de sus obras más famosas, esta comedia teatral ofrece una mirada satírica a la sociedad peruana de la época.</li>
+                <li>"Poesías líricas": Colección de poemas que reflejan las emociones y pensamientos más profundos del autor.</li>
+                <li>"Crónicas periodísticas": Pardo y Aliaga también contribuyó al periodismo con sus crónicas, donde abordaba temas sociales y políticos de manera crítica.</li>
+            </ul>
+            <p class="highlight">Estas obras no solo entretuvieron al público de su tiempo, sino que también dejaron una marca indeleble en la literatura peruana.</p>
+        </section>
+        <section class="section">
+            <h3>Influencia en la Literatura Peruana</h3>
+            <p>El estilo único de Pardo y Aliaga y su capacidad para abordar temas complejos de manera accesible han influido en generaciones posteriores de escritores peruanos. Su uso del humor y la sátira para analizar la sociedad ha sido especialmente influyente.</p>
+            <p>La exploración de temas como la identidad nacional, la corrupción y la desigualdad social en su obra ha servido como inspiración para muchos escritores contemporáneos que buscan comprender y mejorar la sociedad a través de la literatura.</p>
+        </section>
+        <section class="section">
+            <h3>Legado Literario</h3>
+            <p>El legado literario de Felipe Pardo y Aliaga sigue siendo relevante en la actualidad. Sus obras continúan siendo estudiadas en escuelas y universidades, y su influencia se puede ver en la literatura peruana contemporánea.</p>
+            <p>La capacidad de Pardo y Aliaga para utilizar la literatura como una herramienta para la crítica social y política ha dejado una marca duradera en la literatura peruana, y su legado sigue siendo una fuente de inspiración para aquellos que buscan usar la escritura para promover el cambio y la reflexión.</p>
+        </section>
+        <section class="section">
+            <h3>Conclusión</h3>
+            <p>Las creaciones literarias de Felipe Pardo y Aliaga son un testimonio de su talento y su compromiso con la exploración de la sociedad peruana a través de la palabra escrita. Su contribución a la literatura peruana va más allá de sus obras individuales; representa un enfoque crítico y perspicaz que sigue siendo relevante en la actualidad. A través de sus obras, Pardo y Aliaga desafió las convenciones sociales, políticas y culturales de su tiempo, dejando una marca indeleble en la historia literaria del Perú.</p>
+        </section>
+        </div>
+        <footer class="footer">
+        <p>© 2024 patataman. Todos los derechos reservados.</p>
+        </footer>
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousedown', function(e) {
+        if(e.button === 2) {
+            e.preventDefault();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+            // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+            e.preventDefault();
+        }
+    });
+    
+        </script>
+        </body>
+        </html>

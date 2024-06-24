@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas Destacadas - Felipe Pardo y Aliaga</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        /* Estilos específicos */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section {
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .highlight {
+            background-color: #f39c12;
+            padding: 0.5rem;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Citas Destacadas</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="contexto.html">Contexto histórico</a>
+        <a href="criticas.html">Críticas y recepción</a>
+        <a href="influencias.html">Influencias literarias</a>
+        <a href="legado.html">Legado y relevancia actual</a>
+        <a href="minijuego.html">Minijuego</a>
+    </nav>
+    <div class="container">
+        <section class="section">
+            <h2>Citas Memorable</h2>
+            <p>Felipe Pardo y Aliaga dejó un legado de citas memorables que capturan la esencia de su pensamiento y su aguda observación de la sociedad. Aquí algunas de sus citas más destacadas:</p>
+            <p class="highlight">"La risa es el mejor espejo para reflejar las miserias humanas."</p>
+            <p>"En una sociedad donde todo se vende, la integridad se convierte en el bien más preciado."</p>
+        </section>
+        <section class="section">
+            <h3>Sobre la Política</h3>
+            <p>Pardo y Aliaga a menudo abordaba temas políticos con una crítica mordaz:</p>
+            <p class="highlight">"La política es el arte de disfrazar la ambición con la máscara del servicio público."</p>
+            <p>"El verdadero patriotismo no reside en el grito vacío, sino en la acción silenciosa y constante."</p>
+        </section>
+        <section class="section">
+            <h3>Sobre la Sociedad</h3>
+            <p>Su observación de la sociedad fue igualmente aguda:</p>
+            <p class="highlight">"Una sociedad que no se ríe de sí misma está condenada a tomarse demasiado en serio sus propias ilusiones."</p>
+            <p>"La ignorancia es el terreno fértil donde crecen los prejuicios y la intolerancia."</p>
+        </section>
+        <section class="section">
+            <h3>Conclusión</h3>
+            <p>Las citas de Felipe Pardo y Aliaga siguen resonando hoy en día por su capacidad para capturar verdades universales con un toque de humor y crítica. Su legado literario continúa inspirando a aquellos que buscan entender y mejorar la sociedad a través de la palabra escrita.</p>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 patataman. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('mousedown', function(e) {
+    if(e.button === 2) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+        // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+        e.preventDefault();
+    }
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencias Literarias - Felipe Pardo y Aliaga</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
+        /* Estilos específicos */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+        .section {
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .card-influences {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            margin-right: 20px;
+        }
+        .card-influences:last-child {
+            margin-right: 0;
+        }
+        .card-influences-content {
+            padding: 20px;
+        }
+        .card-influences-title {
+            font-size: 1.2rem;
+            color: #34495e;
+            margin-bottom: 0.5rem;
+        }
+        .card-influences-text {
+            font-size: 1rem;
+            color: #666;
+        }
+        .card-influences:hover .card-influences-text {
+            color: #333;
+        }
+        .card-influences:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        /* Animaciones para citas */
+        .quote {
+            font-style: italic;
+            margin: 1rem 0;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-left: 5px solid #f39c12;
+            border-radius: 5px;
+            animation: fadeInQuote 2s;
+        }
+        @keyframes fadeInQuote {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Animaciones de fade-in */
+        .fade {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade.visible {
+            opacity: 1;
+        }
+        /* Decoraciones para tarjetas */
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #34495e;
+            margin-bottom: 0.5rem;
+        }
+        .card-content {
+            font-size: 1rem;
+            color: #666;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        /* Decoraciones para citas */
+        .quote {
+            font-style: italic;
+            margin: 1rem 0;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-left: 5px solid #f39c12;
+            border-radius: 5px;
+            animation: fadeInQuote 2s;
+        }
+        @keyframes fadeInQuote {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Animaciones de fade-in */
+        .fade {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Felipe Pardo y Aliaga</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="contexto.html">Contexto histórico</a>
+        <a href="criticas.html">Críticas y recepción</a>
+        <a href="influencias.html">Influencias literarias</a>
+        <a href="legado.html">Legado y relevancia actual</a>
+        <a href="minijuego.html">Minijuego</a>
+        <a href="citas.html">Citas destacadas</a>
+    </nav>
+    <div class="container">
+        <section class="section">
+            <h2>Influencias Literarias</h2>
+            <p>Explora las diversas influencias literarias que inspiraron la obra de Felipe Pardo y Aliaga.</p>
+            <div class="carousel">
+                <div class="card-influences" onclick="window.open('https://es.wikipedia.org/wiki/Edad_de_Oro_de_la_literatura_espa%C3%B1ola')">
+                    <div class="card-influences-content">
+                        <h3 class="card-influences-title">Edad de Oro de la literatura española</h3>
+                        <p class="card-influences-text">Las obras de autores como Cervantes, Lope de Vega y Calderón de la Barca influyeron en el estilo y la temática de Felipe Pardo y Aliaga.</p>
+                    </div>
+                </div>
+                <div class="card-influences" onclick="window.open('https://es.wikipedia.org/wiki/William_Shakespeare')">
+                    <div class="card-influences-content">
+                        <h3 class="card-influences-title">William Shakespeare</h3>
+                        <p class="card-influences-text">La maestría de Shakespeare en el teatro y su profundo análisis de la condición humana impactaron la escritura teatral de Pardo y Aliaga.</p>
+                    </div>
+                </div>
+                <div class="card-influences" onclick="window.open('https://es.wikipedia.org/wiki/Moli%C3%A8re')">
+                    <div class="card-influences-content">
+                        <h3 class="card-influences-title">Molière</h3>
+                        <p class="card-influences-text">El ingenio satírico de Molière y su habilidad para criticar las costumbres sociales influyeron en el enfoque crítico de Pardo y Aliaga.</p>
+                    </div>
+                </div>
+                <div class="card-influences" onclick="window.open('https://es.wikipedia.org/wiki/Francisco_de_Quevedo')">
+                    <div class="card-influences-content">
+                        <h3 class="card-influences-title">Francisco de Quevedo</h3>
+                        <p class="card-influences-text">La agudeza y el humor de Quevedo, así como su crítica social, resonaron en la obra poética y teatral de Pardo y Aliaga.</p>
+                    </div>
+                </div>
+                <div class="card-influences" onclick="window.open('https://es.wikipedia.org/wiki/Francisco_de_Quevedo')">
+                    <div class="card-influences-content">
+                        <h3 class="card-influences-title">Pedro Calderón de la Barca</h3>
+                        <p class="card-influences-text">La profundidad filosófica y las estructuras dramáticas de Calderón de la Barca influyeron en la obra teatral de Pardo y Aliaga.</p>
+                    </div>
+                </div>
+                <div class="card-influences" onclick="window.open('https://es.wikipedia.org/wiki/Francisco_de_Quevedo')">
+                    <div class="card-influences-content">
+                        <h3 class="card-influences-title">Ben Jonson</h3>
+                        <p class="card-influences-text">El realismo y la crítica social de Jonson influyeron en la visión teatral de Pardo y Aliaga, especialmente en su análisis de la sociedad peruana.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 patataman. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('mousedown', function(e) {
+    if(e.button === 2) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+        // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+        e.preventDefault();
+    }
+});
+
+    </script>
+</body>
+</html>
+

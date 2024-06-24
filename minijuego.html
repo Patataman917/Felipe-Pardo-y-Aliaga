@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minijuego - Felipe Pardo y Aliaga</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            animation: changeBackground 10s infinite alternate; /* Animación de fondo */
+        }
+
+        @keyframes changeBackground {
+            0% { background-color: #f0f8ff; }
+            25% { background-color: #d3e0ea; }
+            50% { background-color: #adc9d4; }
+            75% { background-color: #92b3be; }
+            100% { background-color: #789aa9; }
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+        .section {
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-in-out;
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .highlight {
+            background-color: #f39c12;
+            padding: 0.5rem;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .button {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border: none;
+            padding: 1rem 2rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #f39c12;
+        }
+        #timer {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minijuego de Felipe Pardo y Aliaga</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="contexto.html">Contexto histórico</a>
+        <a href="criticas.html">Críticas y recepción</a>
+        <a href="influencias.html">Influencias literarias</a>
+        <a href="legado.html">Legado y relevancia actual</a>
+        <a href="citas.html">Citas destacadas</a>
+    </nav>
+    <div class="container">
+        <section class="section">
+            <h2>Preguntas de Sí o No sobre Felipe Pardo y Aliaga</h2>
+            <p>Responde "Sí" o "No" a tantas preguntas como puedas en 20 segundos.</p>
+            <div id="timer">20</div>
+            <div id="question"></div>
+            <div class="button-container">
+                <button class="button" onclick="answer(true)">Sí</button>
+                <button class="button" onclick="answer(false)">No</button>
+            </div>
+            <div id="result"></div>
+            <div id="verification-code"></div>
+            <div id="user-ip"></div>
+        </section>
+    </div>
+    <footer class="footer">
+        © 2024 Minijuego de patataman Todos los derechos reservados.
+    </footer>
+    <script>
+        const questions = [
+            { question: "¿Felipe Pardo y Aliaga nació en 1806?", answer: true },
+            { question: "¿Escribió 'El hombre de mundo'?", answer: true },
+            { question: "¿Fue un crítico de la sociedad peruana?", answer: true },
+            { question: "¿Murió en 1860?", answer: false },
+            { question: "¿Fue contemporáneo de Ricardo Palma?", answer: true },
+            { question: "¿Nació en Lima?", answer: false },
+            { question: "¿Escribió principalmente en francés?", answer: false },
+            { question: "¿Su obra incluye poesía y teatro?", answer: true },
+            { question: "¿Fue exiliado en Chile?", answer: true },
+            { question: "¿Criticó la corrupción en sus escritos?", answer: true },
+            { question: "¿Era conocido por su sentido del humor?", answer: true },
+            { question: "¿Se educó en España?", answer: true },
+            { question: "¿Escribió 'Tradiciones Peruanas'?", answer: false },
+            { question: "¿Fue abogado de profesión?", answer: true },
+            { question: "¿Su obra tuvo influencia británica?", answer: true },
+            { question: "¿Promovió la educación en Perú?", answer: true },
+            { question: "¿Fue enemigo del gobierno de turno?", answer: true },
+            { question: "¿Murió en Francia?", answer: false },
+            { question: "¿Sus obras fueron censuradas?", answer: true },
+            { question: "¿Es considerado un héroe nacional?", answer: false },
+            { question: "¿Escribió 'La conquista de México'?", answer: false },
+            { question: "¿Felipe Pardo y Aliaga fue periodista?", answer: true },
+            { question: "¿Nació en Cusco?", answer: false },
+            { question: "¿Escribió 'Los guantes blancos'?", answer: true },
+            { question: "¿Estudió en la Universidad de San Marcos?", answer: true },
+            { question: "¿Publicó en el periódico 'El Mercurio'?", answer: false },
+            { question: "¿Tuvo influencia de la Ilustración?", answer: true },
+            { question: "¿Fue defensor del clero?", answer: false },
+            { question: "¿Apoyó la independencia de Perú?", answer: true },
+            { question: "¿Fue dramaturgo?", answer: true },
+            { question: "¿Publicó en 'El Comercio'?", answer: true },
+            { question: "¿Fue embajador en España?", answer: true },
+            { question: "¿Escribió 'El espejo de mi tierra'?", answer: false },
+            { question: "¿Fue contemporáneo de Manuel González Prada?", answer: false },
+            { question: "¿Criticó la aristocracia peruana?", answer: true },
+            { question: "¿Escribió 'Frutos de la educación'?", answer: true },
+            { question: "¿Fue exiliado a Europa?", answer: true },
+            { question: "¿Publicó bajo seudónimo?", answer: true },
+            { question: "¿Nació en el siglo XVIII?", answer: false },
+            { question: "¿Es considerado un pionero del periodismo?", answer: true }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timer;
+        let timeLeft = 20;
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Shuffle questions for randomness
+        shuffle(questions);
+
+        function showQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                document.getElementById('question').innerText = questions[currentQuestionIndex].question;
+            } else {
+                endGame();
+            }
+        }
+
+        function startTimer() {
+            document.getElementById('timer').innerText = timeLeft;
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').innerText = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function answer(isYes) {
+            const correctAnswer = questions[currentQuestionIndex].answer;
+            if ((isYes && correctAnswer) || (!isYes && !correctAnswer)) {
+                score++;
+            }
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function endGame() {
+            document.getElementById('question').innerText = "";
+            document.getElementById('timer').innerText = "";
+            document.getElementById('result').innerHTML = `<p>Puntuación final: ${score}/${questions.length}</p>`;
+            getIPAddress();
+        }
+
+        function getIPAddress() {
+            fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const ip = data.ip;
+                generateUniqueCode(ip);
+                displayUserIP(ip);
+            })
+            .catch(error => {
+                console.error('Error al obtener la dirección IP:', error);
+            });
+        }
+
+        function generateUniqueCode(ip) {
+            const randomNumber = Math.floor(Math.random() * 10000); // Generamos un número aleatorio de 4 dígitos
+            const code = `${score}-${randomNumber}-${ip.replace(/\./g, '')}`; // Concatenamos la puntuación, el número aleatorio y la IP sin puntos
+            document.getElementById('verification-code').innerText = `Código de verificación: ${code}`;
+        }
+
+        function displayUserIP(ip) {
+            document.getElementById('user-ip').innerText = `: ${ip}`;
+        }
+
+        // Inicia el juego
+        showQuestion();
+        startTimer();
+    </script>
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousedown', function(e) {
+        if(e.button === 2) {
+            e.preventDefault();
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if(e.ctrlKey && (e.which === 67 || e.which === 86 || e.which === 85 || e.which === 117)) {
+            // Ctrl+C, Ctrl+V, Ctrl+U y Ctrl+Shift+I
+            e.preventDefault();
+        }
+    });
+    
+        </script>
+</body>
+</html>
+
